@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Де купити смартфон - SmartGuide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7z'/></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7z"/>
+                    </svg>
+                    <span class="logo-text">SmartGuide</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        </svg>
+                        Головна
+                    </a>
+                    <a href="smartphones.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                            <path d="M12 18h.01"/>
+                        </svg>
+                        Смартфони
+                    </a>
+                    <a href="how-to-choose.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                        Як обрати
+                    </a>
+                    <a href="stores.html" class="nav-link active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                            <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/>
+                        </svg>
+                        Де купити
+                    </a>
+                    <a href="facts.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <path d="M12 17h.01"/>
+                        </svg>
+                        Цікаві факти
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Контакти
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Де купити смартфон в Україні</h1>
+            <p>Найкращі магазини та інтернет-платформи для покупки смартфонів з гарантією та сервісом</p>
+        </div>
+    </section>
+
+    <!-- City Filter -->
+    <section class="city-filter">
+        <div class="container">
+            <div class="city-buttons">
+                <button class="city-btn active" onclick="filterByCity('all')">Всі міста</button>
+                <button class="city-btn" onclick="filterByCity('Київ')">Київ</button>
+                <button class="city-btn" onclick="filterByCity('Львів')">Львів</button>
+                <button class="city-btn" onclick="filterByCity('Одеса')">Одеса</button>
+                <button class="city-btn" onclick="filterByCity('Харків')">Харків</button>
+                <button class="city-btn" onclick="filterByCity('Дніпро')">Дніпро</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stores Grid -->
+    <section class="stores-section">
+        <div class="container">
+            <div class="stores-grid">
+                <div class="store-card" data-cities="Київ,Львів,Одеса">
+                    <div class="store-header">
+                        <div class="store-info">
+                            <h3>Rozetka</h3>
+                            <p>Інтернет-магазин</p>
+                        </div>
+                        <div class="store-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                    <div class="store-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="4"/>
+                                    <path d="M12 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    <path d="M12 18v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/>
+                                </svg>
+                                <a href="https://rozetka.com.ua" target="_blank">rozetka.com.ua</a>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                +380 (44) 537-02-22
+                            </div>
+                        </div>
+
+                        <div class="features">
+                            <h4>Переваги:</h4>
+                            <div class="features-tags">
+                                <span class="tag tag-green">Доставка по всій Україні</span>
+                                <span class="tag tag-green">Оплата частинами</span>
+                                <span class="tag tag-green">Гарантія</span>
+                            </div>
+                        </div>
+
+                        <div class="locations">
+                            <h4>Локації:</h4>
+                            <div class="location-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <strong>Київ</strong>
+                                    <span>вул. Хрещатик, 22</span>
+                                </div>
+                            </div>
+                            <div class="location-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <strong>Львів</strong>
+                                    <span>вул. Городоцька, 363</span>
+                                </div>
+                            </div>
+                            <div class="location-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <strong>Одеса</strong>
+                                    <span>вул. Дерибасівська, 27</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="store-actions">
+                            <button class="btn btn-outline">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                На карті
+                            </button>
+                            <button class="btn btn-primary" onclick="window.open('https://rozetka.com.ua', '_blank')">
+                                Відвідати
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-card" data-cities="Київ,Харків,Дніпро">
+                    <div class="store-header">
+                        <div class="store-info">
+                            <h3>Comfy</h3>
+                            <p>Мережа магазинів</p>
+                        </div>
+                        <div class="store-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                    <div class="store-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="4"/>
+                                    <path d="M12 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    <path d="M12 18v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/>
+                                </svg>
+                                <a href="https://comfy.ua" target="_blank">comfy.ua</a>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                +380 (800) 303-505
+                            </div>
+                        </div>
+
+                        <div class="features">
+                            <h4>Переваги:</h4>
+                            <div class="features-tags">
+                                <span class="tag tag-green">Trade-in програма</span>
+                                <span class="tag tag-green">Кредит 0%</span>
+                                <span class="tag tag-green">Професійні консультанти</span>
+                            </div>
+                        </div>
+
+                        <div class="locations">
+                            <h4>Локації:</h4>
+                            <div class="location-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <strong>Київ</strong>
+                                    <span>ТРЦ Lavina Mall</span>
+                                </div>
+                            </div>
+                            <div class="location-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <strong>Харків</strong>
+                                    <span>пр. Гагаріна, 20А</span>
+                                </div>
+                            </div>
+                            <div class="location-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <strong>Дніпро</strong>
+                                    <span>вул. Глинки, 2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="store-actions">
+                            <button class="btn btn-outline">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                На карті
+                            </button>
+                            <button class="btn btn-primary" onclick="window.open('https://comfy.ua', '_blank')">
+                                Відвідати
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-card" data-cities="Київ,Запоріжжя">
+                    <div class="store-header">
+                        <div class="store-info">
+                            <h3>Allo</h3>
+                            <p>Інтернет-магазин</p>
+                        </div>
+                        <div class="store-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>4.6</span>
+                        </div>
+                    </div>
+                    <div class="store-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="4"/>
+                                    <path d="M12 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    <path d="M12 18v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/>
+                                </svg>
+                                <a href="https://allo.ua" target="_blank">allo.ua</a>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                +380 (800) 300-100
+                            </div>
+                        </div>
+
+                        <div class="features">
+                            <h4>Переваги:</h4>
+                            <div class="features-tags">
+                                <span class="tag tag-green">Швидка доставка</span>
+                                <span class="tag tag-green">Самовивіз з магазинів</span>
+                                <span class="tag tag-green">Програма лояльності</span>
+                            </div>
+                        </div>
+
+                        <div class="locations">
+                            <h4>Локації:</h4>
+                            <div class="location-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <strong>Київ</strong>
+                                    <span>ТРЦ Gulliver</span>
+                                </div>
+                            </div>
+                            <div class="location-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <strong>Запоріжжя</strong>
+                                    <span>пр. Соборний, 176</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="store-actions">
+                            <button class="btn btn-outline">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                На карті
+                            </button>
+                            <button class="btn btn-primary" onclick="window.open('https://allo.ua', '_blank')">
+                                Відвідати
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-card">
+                <h2>Карта магазинів</h2>
+                <p>Інтерактивна карта з усіма локаціями магазинів смартфонів</p>
+                <div class="map-placeholder">
+                    <div class="map-content">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <h3>Інтерактивна карта</h3>
+                        <p>Тут буде відображена карта з усіма локаціями магазинів. Ви зможете знайти найближчий магазин та проложити до нього маршрут.</p>
+                        <button class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Відкрити повну карту
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Tips -->
+    <section class="shopping-tips">
+        <div class="container">
+            <div class="tips-card">
+                <h2>💡 Поради для покупки</h2>
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                            Коли купувати
+                        </h4>
+                        <ul>
+                            <li>Чорна п'ятниця (листопад)</li>
+                            <li>Після релізу нових моделей</li>
+                            <li>Кінець року (грудень)</li>
+                        </ul>
+                    </div>
+                    <div class="tip-item">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            На що звернути увагу
+                        </h4>
+                        <ul>
+                            <li>Офіційна гарантія</li>
+                            <li>Комплектація товару</li>
+                            <li>Умови повернення</li>
+                        </ul>
+                    </div>
+                    <div class="tip-item">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect width="20" height="14" x="2" y="5" rx="2"/>
+                                <line x1="2" y1="10" x2="22" y2="10"/>
+                            </svg>
+                            Способи оплати
+                        </h4>
+                        <ul>
+                            <li>Готівка/картка</li>
+                            <li>Розстрочка 0%</li>
+                            <li>Trade-in програми</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7z"/>
+                        </svg>
+                        <span>SmartGuide</span>
+                    </div>
+                    <p>Ваш найкращий гід у світі смартфонів. Допомагаємо обрати ідеальний пристрій для ваших потреб.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Швидкі посилання</h3>
+                    <ul>
+                        <li><a href="smartphones.html">Типи смартфонів</a></li>
+                        <li><a href="how-to-choose.html">Як обрати</a></li>
+                        <li><a href="stores.html">Де купити</a></li>
+                        <li><a href="facts.html">Цікаві факти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Категорії</h3>
+                    <ul>
+                        <li><a href="smartphones.html">Флагманські моделі</a></li>
+                        <li><a href="smartphones.html">Бюджетні смартфони</a></li>
+                        <li><a href="smartphones.html">Ігрові телефони</a></li>
+                        <li><a href="smartphones.html">Камерофони</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <ul>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            info@smartguide.ua
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            +380 (44) 123-45-67
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Київ, Україна
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 SmartGuide. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

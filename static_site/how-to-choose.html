@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Як обрати смартфон - SmartGuide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7z'/></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7z"/>
+                    </svg>
+                    <span class="logo-text">SmartGuide</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        </svg>
+                        Головна
+                    </a>
+                    <a href="smartphones.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                            <path d="M12 18h.01"/>
+                        </svg>
+                        Смартфони
+                    </a>
+                    <a href="how-to-choose.html" class="nav-link active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                        Як обрати
+                    </a>
+                    <a href="stores.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                            <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/>
+                        </svg>
+                        Де купити
+                    </a>
+                    <a href="facts.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <path d="M12 17h.01"/>
+                        </svg>
+                        Цікаві факти
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Контакти
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header guide-header">
+        <div class="container">
+            <div class="badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="m9 12 2 2 4-4"/>
+                    <circle cx="12" cy="12" r="10"/>
+                </svg>
+                Покроковий гід
+            </div>
+            <h1>Як обрати ідеальний смартфон?</h1>
+            <p>Пройдіть наш детальний гід з 5 кроків і знайдіть смартфон, який ідеально підійде саме вам</p>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section class="progress-section">
+        <div class="container">
+            <div class="progress-header">
+                <span>Прогрес</span>
+                <span id="progress-percentage">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Navigation -->
+    <section class="steps-nav">
+        <div class="container">
+            <div class="steps-buttons">
+                <button class="step-btn active" onclick="showStep(1)" data-step="1">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <span>Крок 1</span>
+                </button>
+                <button class="step-btn" onclick="showStep(2)" data-step="2">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                        <path d="M12 18h.01"/>
+                    </svg>
+                    <span>Крок 2</span>
+                </button>
+                <button class="step-btn" onclick="showStep(3)" data-step="3">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="m23 7-3 2v6l3 2V7Z"/>
+                        <rect width="15" height="12" x="1" y="6" rx="2" ry="2"/>
+                    </svg>
+                    <span>Крок 3</span>
+                </button>
+                <button class="step-btn" onclick="showStep(4)" data-step="4">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
+                        <path d="M9 22v-4h6v4"/>
+                        <path d="M8 6h.01"/>
+                        <path d="M16 6h.01"/>
+                        <path d="M12 6h.01"/>
+                        <path d="M12 10h.01"/>
+                        <path d="M12 14h.01"/>
+                        <path d="M16 10h.01"/>
+                        <path d="M16 14h.01"/>
+                        <path d="M8 10h.01"/>
+                        <path d="M8 14h.01"/>
+                    </svg>
+                    <span>Крок 4</span>
+                </button>
+                <button class="step-btn" onclick="showStep(5)" data-step="5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect width="16" height="10" x="2" y="7" rx="2" ry="2"/>
+                        <line x1="22" y1="11" x2="18" y2="11"/>
+                        <line x1="6" y1="11" x2="14" y2="11"/>
+                        <line x1="10" y1="15" x2="10" y2="17"/>
+                        <line x1="14" y1="15" x2="14" y2="17"/>
+                    </svg>
+                    <span>Крок 5</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step Content -->
+    <section class="step-content">
+        <div class="container">
+            <!-- Step 1: Budget -->
+            <div class="step-panel active" id="step-1">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h2>Визначте бюджет</h2>
+                    <p>Спочатку вирішіть, скільки ви готові витратити на новий смартфон</p>
+                    <div class="step-details">
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Бюджетні (до 15,000 грн)</strong> - базовий функціонал</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Середній клас (15,000-35,000 грн)</strong> - оптимальне співвідношення</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Преміум (35,000+ грн)</strong> - топові характеристики</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="completeStep(1)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 12 2 2 4-4"/>
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        Позначити як виконане
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Size -->
+            <div class="step-panel" id="step-2">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                            <path d="M12 18h.01"/>
+                        </svg>
+                    </div>
+                    <h2>Оберіть розмір</h2>
+                    <p>Розмір екрана впливає на зручність використання</p>
+                    <div class="step-details">
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Компактні (до 6")</strong> - зручно тримати однією рукою</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Стандартні (6-6.5")</strong> - універсальний розмір</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Великі (6.5"+)</strong> - краще для мультимедіа та ігор</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="completeStep(2)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 12 2 2 4-4"/>
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        Позначити як виконане
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Camera -->
+            <div class="step-panel" id="step-3">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m23 7-3 2v6l3 2V7Z"/>
+                            <rect width="15" height="12" x="1" y="6" rx="2" ry="2"/>
+                        </svg>
+                    </div>
+                    <h2>Камера</h2>
+                    <p>Оцініть важливість якості фото та відео</p>
+                    <div class="step-details">
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Основна камера</strong> - від 12MP для базових потреб</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Мультикамерна система</strong> - для професійних фото</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Нічний режим</strong> - для фото в темряві</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Стабілізація</strong> - для відео без тряски</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="completeStep(3)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 12 2 2 4-4"/>
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        Позначити як виконане
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Performance -->
+            <div class="step-panel" id="step-4">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
+                            <path d="M9 22v-4h6v4"/>
+                            <path d="M8 6h.01"/>
+                            <path d="M16 6h.01"/>
+                            <path d="M12 6h.01"/>
+                            <path d="M12 10h.01"/>
+                            <path d="M12 14h.01"/>
+                            <path d="M16 10h.01"/>
+                            <path d="M16 14h.01"/>
+                            <path d="M8 10h.01"/>
+                            <path d="M8 14h.01"/>
+                        </svg>
+                    </div>
+                    <h2>Продуктивність</h2>
+                    <p>Залежить від ваших завдань</p>
+                    <div class="step-details">
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Базові задачі</strong> - бюджетні процесори</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Мультитаскінг</strong> - 6-8GB RAM</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Ігри</strong> - топові чіпсети та 8GB+ RAM</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Професійна робота</strong> - флагманські моделі</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="completeStep(4)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 12 2 2 4-4"/>
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        Позначити як виконане
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 5: Battery -->
+            <div class="step-panel" id="step-5">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect width="16" height="10" x="2" y="7" rx="2" ry="2"/>
+                            <line x1="22" y1="11" x2="18" y2="11"/>
+                            <line x1="6" y1="11" x2="14" y2="11"/>
+                            <line x1="10" y1="15" x2="10" y2="17"/>
+                            <line x1="14" y1="15" x2="14" y2="17"/>
+                        </svg>
+                    </div>
+                    <h2>Батарея</h2>
+                    <p>Час автономної роботи</p>
+                    <div class="step-details">
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>3000-4000 mAh</strong> - на день використання</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>4000-5000 mAh</strong> - на 1.5-2 дні</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>5000+ mAh</strong> - максимальна автономність</p>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-dot"></div>
+                            <p><strong>Швидка зарядка</strong> - від 25W</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="completeStep(5)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 12 2 2 4-4"/>
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        Позначити як виконане
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="step-navigation">
+                <button class="btn btn-outline" onclick="previousStep()" id="prev-btn" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="19" y1="12" x2="5" y2="12"/>
+                        <polyline points="12,19 5,12 12,5"/>
+                    </svg>
+                    Попередній крок
+                </button>
+                <span class="step-counter">
+                    <span id="current-step">1</span> з 5
+                </span>
+                <button class="btn btn-outline" onclick="nextStep()" id="next-btn">
+                    Наступний крок
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12,5 19,12 12,19"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips-section">
+        <div class="container">
+            <div class="tips-card">
+                <h2>💡 Корисні поради</h2>
+                <div class="tips-grid">
+                    <div class="tip-column">
+                        <h4>Перед покупкою:</h4>
+                        <ul>
+                            <li>Порівняйте ціни в різних магазинах</li>
+                            <li>Перевірте відгуки користувачів</li>
+                            <li>Подивіться відео-огляди</li>
+                        </ul>
+                    </div>
+                    <div class="tip-column">
+                        <h4>Під час покупки:</h4>
+                        <ul>
+                            <li>Перевірте комплектацію</li>
+                            <li>Протестуйте всі функції</li>
+                            <li>Уточніть умови гарантії</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7z"/>
+                        </svg>
+                        <span>SmartGuide</span>
+                    </div>
+                    <p>Ваш найкращий гід у світі смартфонів. Допомагаємо обрати ідеальний пристрій для ваших потреб.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Швидкі посилання</h3>
+                    <ul>
+                        <li><a href="smartphones.html">Типи смартфонів</a></li>
+                        <li><a href="how-to-choose.html">Як обрати</a></li>
+                        <li><a href="stores.html">Де купити</a></li>
+                        <li><a href="facts.html">Цікаві факти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Категорії</h3>
+                    <ul>
+                        <li><a href="smartphones.html">Флагманські моделі</a></li>
+                        <li><a href="smartphones.html">Бюджетні смартфони</a></li>
+                        <li><a href="smartphones.html">Ігрові телефони</a></li>
+                        <li><a href="smartphones.html">Камерофони</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <ul>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            info@smartguide.ua
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            +380 (44) 123-45-67
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Київ, Україна
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 SmartGuide. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
