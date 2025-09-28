@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цікаві факти про смартфони - SmartGuide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7z'/></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7z"/>
+                    </svg>
+                    <span class="logo-text">SmartGuide</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        </svg>
+                        Головна
+                    </a>
+                    <a href="smartphones.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                            <path d="M12 18h.01"/>
+                        </svg>
+                        Смартфони
+                    </a>
+                    <a href="how-to-choose.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                        Як обрати
+                    </a>
+                    <a href="stores.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                            <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/>
+                        </svg>
+                        Де купити
+                    </a>
+                    <a href="facts.html" class="nav-link active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <path d="M12 17h.01"/>
+                        </svg>
+                        Цікаві факти
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Контакти
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header facts-header">
+        <div class="container">
+            <h1>Цікаві факти про смартфони</h1>
+            <p>12 захоплюючих фактів зі світу мобільних технологій, які вас здивують</p>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="category-filter">
+        <div class="container">
+            <div class="category-buttons">
+                <button class="category-btn active" onclick="filterFacts('all')">Всі факти</button>
+                <button class="category-btn" onclick="filterFacts('Історія')">Історія</button>
+                <button class="category-btn" onclick="filterFacts('Рекорди')">Рекорди</button>
+                <button class="category-btn" onclick="filterFacts('Статистика')">Статистика</button>
+                <button class="category-btn" onclick="filterFacts('Технології')">Технології</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts Grid -->
+    <section class="facts-section">
+        <div class="container">
+            <div class="facts-grid">
+                <div class="fact-card" data-category="Історія">
+                    <div class="fact-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=200&fit=crop" alt="Перший смартфон">
+                        <div class="fact-overlay">
+                            <div class="fact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                Історія
+                            </div>
+                            <div class="fact-number">Факт #1</div>
+                        </div>
+                    </div>
+                    <div class="fact-content">
+                        <h3>Перший смартфон</h3>
+                        <p>Перший смартфон IBM Simon був випущений у 1994 році і коштував $1,100</p>
+                        <div class="fact-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>Цікавий рейтинг: 4.8/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card" data-category="Рекорди">
+                    <div class="fact-image">
+                        <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=200&fit=crop" alt="Найдорожчий смартфон">
+                        <div class="fact-overlay">
+                            <div class="fact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                                    <path d="M14 15h1.5a2.5 2.5 0 0 1 0 5H14"/>
+                                    <path d="M6 15H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                                    <path d="M14 9h1.5a2.5 2.5 0 0 1 0 5H14"/>
+                                </svg>
+                                Рекорди
+                            </div>
+                            <div class="fact-number">Факт #2</div>
+                        </div>
+                    </div>
+                    <div class="fact-content">
+                        <h3>Найдорожчий смартфон</h3>
+                        <p>Falcon Supernova iPhone 6 Pink Diamond коштує $48.5 мільйонів</p>
+                        <div class="fact-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>Цікавий рейтинг: 4.9/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card" data-category="Статистика">
+                    <div class="fact-image">
+                        <img src="https://images.unsplash.com/photo-1567581935884-3349723552ca?w=400&h=200&fit=crop" alt="Android статистика">
+                        <div class="fact-overlay">
+                            <div class="fact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 20v-6M6 20V10M18 20V4"/>
+                                </svg>
+                                Статистика
+                            </div>
+                            <div class="fact-number">Факт #3</div>
+                        </div>
+                    </div>
+                    <div class="fact-content">
+                        <h3>Найпопулярніша ОС</h3>
+                        <p>Android використовує більше 70% смартфонів у світі</p>
+                        <div class="fact-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>Цікавий рейтинг: 4.5/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card" data-category="Історія">
+                    <div class="fact-image">
+                        <img src="https://images.unsplash.com/photo-1592286249018-da833d8d8743?w=400&h=200&fit=crop" alt="Перший iPhone">
+                        <div class="fact-overlay">
+                            <div class="fact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                Історія
+                            </div>
+                            <div class="fact-number">Факт #4</div>
+                        </div>
+                    </div>
+                    <div class="fact-content">
+                        <h3>Перший iPhone</h3>
+                        <p>Перший iPhone не мав App Store - він з'явився тільки в 2008 році</p>
+                        <div class="fact-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>Цікавий рейтинг: 4.7/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card" data-category="Рекорди">
+                    <div class="fact-image">
+                        <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=200&fit=crop" alt="Найтонший смартфон">
+                        <div class="fact-overlay">
+                            <div class="fact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                                    <path d="M14 15h1.5a2.5 2.5 0 0 1 0 5H14"/>
+                                    <path d="M6 15H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                                    <path d="M14 9h1.5a2.5 2.5 0 0 1 0 5H14"/>
+                                </svg>
+                                Рекорди
+                            </div>
+                            <div class="fact-number">Факт #5</div>
+                        </div>
+                    </div>
+                    <div class="fact-content">
+                        <h3>Найтонший смартфон</h3>
+                        <p>Vivo X5 Max має товщину всього 4.75 мм</p>
+                        <div class="fact-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>Цікавий рейтинг: 4.6/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card" data-category="Статистика">
+                    <div class="fact-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=200&fit=crop" alt="Час використання">
+                        <div class="fact-overlay">
+                            <div class="fact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 20v-6M6 20V10M18 20V4"/>
+                                </svg>
+                                Статистика
+                            </div>
+                            <div class="fact-number">Факт #6</div>
+                        </div>
+                    </div>
+                    <div class="fact-content">
+                        <h3>Час використання</h3>
+                        <p>Середня людина дивиться на свій смартфон 96 разів на день</p>
+                        <div class="fact-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>Цікавий рейтинг: 4.4/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card" data-category="Технології">
+                    <div class="fact-image">
+                        <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=200&fit=crop" alt="Touch ID">
+                        <div class="fact-overlay">
+                            <div class="fact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                    <line x1="12" y1="19" x2="12" y2="22"/>
+                                </svg>
+                                Технології
+                            </div>
+                            <div class="fact-number">Факт #7</div>
+                        </div>
+                    </div>
+                    <div class="fact-content">
+                        <h3>Touch ID швидкість</h3>
+                        <p>Touch ID розпізнає відбиток пальця за 0.01 секунди</p>
+                        <div class="fact-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>Цікавий рейтинг: 4.3/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card" data-category="Технології">
+                    <div class="fact-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=200&fit=crop" alt="Швидка зарядка">
+                        <div class="fact-overlay">
+                            <div class="fact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                    <line x1="12" y1="19" x2="12" y2="22"/>
+                                </svg>
+                                Технології
+                            </div>
+                            <div class="fact-number">Факт #8</div>
+                        </div>
+                    </div>
+                    <div class="fact-content">
+                        <h3>Найшвидша зарядка</h3>
+                        <p>Realme GT Neo3 заряджається на 150W за 5 хвилин до 50%</p>
+                        <div class="fact-rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <span>Цікавий рейтинг: 4.8/5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey Section -->
+    <section class="survey-section">
+        <div class="container">
+            <div class="survey-card">
+                <div class="survey-header">
+                    <h2>Опитування користувачів</h2>
+                    <p>Поділіться вашим досвідом використання смартфонів</p>
+                </div>
+                
+                <div class="survey-intro" id="survey-intro">
+                    <p>Ваша думка важлива для нас! Пройдіть коротке опитування про ваші вподобання та досвід використання смартфонів. Це допоможе нам покращити наші рекомендації.</p>
+                    <button class="btn btn-primary" onclick="startSurvey()">
+                        Розпочати опитування
+                    </button>
+                </div>
+
+                <form class="survey-form" id="survey-form" style="display: none;" onsubmit="submitSurvey(event)">
+                    <div class="question">
+                        <label>Який ваш основний бренд смартфона?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="brand" value="Apple"> Apple</label>
+                            <label><input type="radio" name="brand" value="Samsung"> Samsung</label>
+                            <label><input type="radio" name="brand" value="Xiaomi"> Xiaomi</label>
+                            <label><input type="radio" name="brand" value="Google"> Google</label>
+                            <label><input type="radio" name="brand" value="OnePlus"> OnePlus</label>
+                            <label><input type="radio" name="brand" value="Other"> Інший</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>Яка найважливіша характеристика для вас?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="important" value="Camera"> Камера</label>
+                            <label><input type="radio" name="important" value="Battery"> Батарея</label>
+                            <label><input type="radio" name="important" value="Performance"> Продуктивність</label>
+                            <label><input type="radio" name="important" value="Design"> Дизайн</label>
+                            <label><input type="radio" name="important" value="Price"> Ціна</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>Який ваш бюджет на смартфон?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="budget" value="under10k"> До 10,000 грн</label>
+                            <label><input type="radio" name="budget" value="10k-25k"> 10,000-25,000 грн</label>
+                            <label><input type="radio" name="budget" value="25k-50k"> 25,000-50,000 грн</label>
+                            <label><input type="radio" name="budget" value="over50k"> Більше 50,000 грн</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>Як часто ви міняєте смартфон?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="frequency" value="yearly"> Щорічно</label>
+                            <label><input type="radio" name="frequency" value="2-3years"> Раз в 2-3 роки</label>
+                            <label><input type="radio" name="frequency" value="4-5years"> Раз в 4-5 років</label>
+                            <label><input type="radio" name="frequency" value="when-broken"> Коли поламається</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>Ваш рейтинг загального задоволення смартфоном (1-10)</label>
+                        <input type="range" name="satisfaction" min="1" max="10" value="5" oninput="updateRangeValue(this)">
+                        <div class="range-value">5</div>
+                    </div>
+
+                    <div class="survey-actions">
+                        <button type="button" class="btn btn-outline" onclick="cancelSurvey()">
+                            Скасувати
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22,2 15,22 11,13 2,9"/>
+                            </svg>
+                            Надіслати відповіді
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7z"/>
+                        </svg>
+                        <span>SmartGuide</span>
+                    </div>
+                    <p>Ваш найкращий гід у світі смартфонів. Допомагаємо обрати ідеальний пристрій для ваших потреб.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Швидкі посилання</h3>
+                    <ul>
+                        <li><a href="smartphones.html">Типи смартфонів</a></li>
+                        <li><a href="how-to-choose.html">Як обрати</a></li>
+                        <li><a href="stores.html">Де купити</a></li>
+                        <li><a href="facts.html">Цікаві факти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Категорії</h3>
+                    <ul>
+                        <li><a href="smartphones.html">Флагманські моделі</a></li>
+                        <li><a href="smartphones.html">Бюджетні смартфони</a></li>
+                        <li><a href="smartphones.html">Ігрові телефони</a></li>
+                        <li><a href="smartphones.html">Камерофони</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <ul>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            info@smartguide.ua
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            +380 (44) 123-45-67
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Київ, Україна
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 SmartGuide. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
